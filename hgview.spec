@@ -31,7 +31,7 @@ Summary:	Common files of hgview
 Summary(pl.UTF-8):	Pliki wspólne dla hgview
 Group:		Development/Version Control
 %pyrequires_eq	python-modules
-Requires:	hgview-GUI
+Requires:	%{name}-GUI
 
 %description common
 Common files for hgview used by hgview-gtk and hgview-qt.
@@ -43,8 +43,8 @@ Wspólne pliki dla hgview używane przez hgview-gtk i hgview-qt.
 Summary:	GTK GUI for hgview
 Summary(pl.UTF-8):	GUI w GTK dla hgview
 Group:		X11/Applications
-Requires:	hgview-common
-Provides:	hgview-GUI
+Requires:	%{name}-common = %{version}-%{release}
+Provides:	%{name}-GUI
 
 %description gtk
 GTK GUI for hgview.
@@ -56,8 +56,8 @@ GUI w GTK dla hgview.
 Summary:	Qt4 GUI for hgview
 Summary(pl.UTF-8):	GUI w Qt4 dla hgview
 Group:		X11/Applications
-Requires:	hgview-common
-Provides:	hgview-GUI
+Requires:	%{name}-common = %{version}-%{release}
+Provides:	%{name}-GUI
 
 %description qt
 Qt4 GUI for hgview.
@@ -93,7 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/hgview/*.py[co]
 %{py_sitescriptdir}/%{module}-*.egg-info
 %{_mandir}/man1/hgview.1*
-
 
 %files gtk
 %defattr(644,root,root,755)
